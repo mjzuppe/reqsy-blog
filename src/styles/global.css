@@ -214,11 +214,36 @@ hr {
 
 @media (max-width: 720px) {
 	body {
-		font-size: 18px;
+		font-size: 16px;
 	}
 
 	main {
 		padding: 1em;
+	}
+
+	header {
+		height: 170px;
+		flex-direction: column;
+	}
+
+	h1 {
+		font-size: 20px;
+		line-height: 20px;
+	}
+
+	p {
+		font-size: 16px;
+		line-height: 1.5;
+	}
+
+	div .button {
+		border-radius: 4px;
+		color: #FFF;
+		font-size: 16px;
+		margin: 5px;
+		padding: 5px;
+		max-width: 120px;
+		display:
 	}
 }
 
@@ -240,8 +265,8 @@ hr {
 	white-space: nowrap;
 }
 
+
 header {
-	height: 100px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -273,7 +298,6 @@ footer {
 	margin: 10px;
 	padding: 10px;
 	max-width: 200px;
-	;
 }
 
 .bg-secondary {
