@@ -1,28 +1,36 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
-import { getCollection } from 'astro:content';
-import FormattedDate from '../components/FormattedDate.astro';
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import { getCollection } from "astro:content";
+import FormattedDate from "../components/FormattedDate.astro";
 
-const posts = (await getCollection('blog')).sort(
-	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+const posts = (await getCollection("blog")).sort(
+	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf(),
 );
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
-		  <!-- Google tag (gtag.js) -->
-		  <script async src="https://www.googletagmanager.com/gtag/js?id=G-THBV3DG5VY"></script>
-		  <script is:inline>
-			  window.dataLayer = window.dataLayer || [];
-			  function gtag() { dataLayer.push(arguments); }
-			  gtag('js', new Date());
-	  
-			  gtag('config', 'G-THBV3DG5VY');
-		  </script>
+		<!-- Google tag (gtag.js) -->
+		<script
+			type="text/partytown"
+			async
+			src="https://www.googletagmanager.com/gtag/js?id=G-S0RSMVKT1Q"
+		></script>
+
+		<script type="text/partytown">
+			window.dataLayer = window.dataLayer || [];
+
+			function gtag() {
+				window.dataLayer.push(arguments);
+			}
+			gtag("js", new Date());
+			gtag("config", "G-S0RSMVKT1Q");
+		</script>
+
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 		<style>
 			main {
@@ -103,10 +111,17 @@ const posts = (await getCollection('blog')).sort(
 						posts.map((post) => (
 							<li>
 								<a href={`/${post.slug}/`}>
-									<img width={720} height={360} src={post.data.heroImage} alt="" />
+									<img
+										width={720}
+										height={360}
+										src={post.data.heroImage}
+										alt=""
+									/>
 									<h4 class="title">{post.data.title}</h4>
 									<p class="date">
-										<FormattedDate date={post.data.pubDate} />
+										<FormattedDate
+											date={post.data.pubDate}
+										/>
 									</p>
 								</a>
 							</li>
