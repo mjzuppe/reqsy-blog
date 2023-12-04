@@ -7,7 +7,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://productpeople.reqsy.com',
+	site: 'https://productpeople.reqsy.co',
 	integrations: [robots(), mdx(), sitemap(),
 		partytown({
 			config: {
